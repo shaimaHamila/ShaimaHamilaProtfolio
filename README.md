@@ -18,6 +18,8 @@ This boilerplate provides a solid foundation for building React applications wit
 
    ```bash
    npm install
-   # or
-   yarn install
+   Then
+   npm run dev
+   or
+   docker compose up
    ```
