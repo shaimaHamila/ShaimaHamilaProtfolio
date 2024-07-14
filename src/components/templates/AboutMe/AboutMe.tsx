@@ -5,7 +5,7 @@ const AboutMe: React.FC = () => {
       <span className='section__subtitle'>My introduction</span>
 
       <div className='about__container container grid'>
-        {/* <img src='assets/img/about.jpg' alt='about me' className='about__img' /> */}
+        <img src='src\assets\shaimaHamila-about-ing.png' alt='about me' className='about__img' />
 
         <div className='about__data'>
           <p className='about__description'>
