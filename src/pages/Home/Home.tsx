@@ -27,7 +27,23 @@ const Home: React.FC = () => {
         title={"Hi, I'am Shaima Hamila"}
         subtitle={"< Software Engineering student & Full-stack JS developer /> "}
       />
-      <AboutMe />
+      <AboutMe
+        title={"About Me"}
+        subTitle={"My introduction"}
+        imageSrc={"src/assets/shaimaHamila-about-ing.png"}
+        description={
+          " I’m a Software Engineering student & Full-stack JS developer with 2 years of experience. I specialize increating high-quality web applications."
+        }
+        points={[
+          "🚀 I deliver client-focused solutions.",
+          "⚡ I'm a web developer Freelancer.",
+          "🔥 I love sharing programming tips.",
+        ]}
+        yearsExperience={"02+"}
+        completedProjects={"12+"}
+        companiesWorked={"04+"}
+        cvLink={"assets/pdf/ShaimaHamilaResume.pdf"}
+      />
       <MyServices />
       <MySkills />
       <MyQualification />

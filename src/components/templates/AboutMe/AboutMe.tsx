@@ -1,21 +1,44 @@
-const AboutMe: React.FC = () => {
+import SectionTitle from "../../atoms/SectionTitle/SectionTitle";
+import "./AboutMe.scss";
+
+interface AboutMeProps {
+  title: string;
+  subTitle: string;
+  imageSrc: string;
+  description: string;
+  points: string[];
+  yearsExperience: string;
+  completedProjects: string;
+  companiesWorked: string;
+  cvLink: string;
+}
+const AboutMe: React.FC<AboutMeProps> = ({
+  title,
+  subTitle,
+  imageSrc,
+  description,
+  points,
+  yearsExperience,
+  completedProjects,
+  companiesWorked,
+  cvLink,
+}) => {
   return (
     <section className='about section' id='about'>
-      <h2 className='section__title'>About Me</h2>
-      <span className='section__subtitle'>My introduction</span>
-
+      <SectionTitle title={title} subTitle={subTitle} />
       <div className='about__container container grid'>
-        <img src='src\assets\shaimaHamila-about-ing.png' alt='about me' className='about__img' />
+        <img src={imageSrc} alt='about me' className='about__img' />
 
         <div className='about__data'>
-          <p className='about__description'>
-            Front end developer & Designer, with extensive knowledge and years of experience, working in development and
-            UI / UX design, delivering quality work.
-          </p>
-
+          <p className='about__description'>{description}</p>
+          <ul className='about__description-ul'>
+            {points.map((point, index) => (
+              <li key={index}>{point}</li>
+            ))}
+          </ul>
           <div className='about__info'>
             <div>
-              <span className='about__info-title'>02+</span>
+              <span className='about__info-title'>{yearsExperience}</span>
               <span className='about__info-name'>
                 years
                 <br />
@@ -23,7 +46,7 @@ const AboutMe: React.FC = () => {
               </span>
             </div>
             <div>
-              <span className='about__info-title'>12+</span>
+              <span className='about__info-title'>{completedProjects}</span>
               <span className='about__info-name'>
                 Completed
                 <br />
@@ -31,7 +54,7 @@ const AboutMe: React.FC = () => {
               </span>
             </div>
             <div>
-              <span className='about__info-title'>04+</span>
+              <span className='about__info-title'>{companiesWorked}</span>
               <span className='about__info-name'>
                 Companies
                 <br />
@@ -41,7 +64,7 @@ const AboutMe: React.FC = () => {
           </div>
 
           <div className='about__buttons'>
-            <a download='' href='assets/pdf/ChaimaHamilaResume.pdf' className='button button--flex'>
+            <a download='' href={cvLink} className='button button--flex'>
               Download CV<i className='uil uil-download-alt button__icon'></i>
             </a>
           </div>

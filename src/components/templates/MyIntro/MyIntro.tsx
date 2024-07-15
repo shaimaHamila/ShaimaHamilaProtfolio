@@ -28,17 +28,18 @@ const MyIntro: React.FC<MyIntroProps> = ({ socialLinks, imageSrc, title, subtitl
             <div className='home__data'>
               <h1 className='home__title'>{title}</h1>
               <h3 className='home__subtitle'>{subtitle}</h3>
-
-              <button className='button button--flex glow-on-hover'>
-                Get in touch<i className='uil uil-message button__icon'></i>
-              </button>
-            </div>
-            <div className='home__scroll'>
-              <a href='#about' className='home__scroll-button button--flex'>
-                <i className='uil uil-mouse-alt home__scroll-mouse'></i>
-                <span className='home__scroll-name'>Scroll down</span>
-                <i className='uil uil-arrow-down home__scroll-arrow'></i>
-              </a>
+              <div className='home__btn-scroll' style={{ display: "flex" }}>
+                <button className='button button--flex glow-on-hover'>
+                  Get in touch<i className='uil uil-message button__icon'></i>
+                </button>
+                <div className='home__scroll'>
+                  <a href='#about' className='home__scroll-button button--flex'>
+                    <i className='uil uil-mouse-alt home__scroll-mouse'></i>
+                    <span className='home__scroll-name'>Scroll down</span>
+                    <i className='uil uil-arrow-down home__scroll-arrow'></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
