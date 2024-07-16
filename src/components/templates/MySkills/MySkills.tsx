@@ -5,7 +5,6 @@ interface Skill {
   name: string;
   category: string;
 }
-
 interface MySkillsProps {
   title: string;
   subTitle: string;
@@ -15,7 +14,6 @@ const MySkills: React.FC<MySkillsProps> = ({ title, subTitle, skills }) => {
   return (
     <section id='skills' className='skills section'>
       <SectionTitle title={title} subTitle={subTitle} />
-
       <div className='skills__container container '>
         {skills.map((skill, index) => (
           <div key={index} className='skills__card'>
