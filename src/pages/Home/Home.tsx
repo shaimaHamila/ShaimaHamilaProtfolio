@@ -44,7 +44,7 @@ const Home: React.FC = () => {
         companiesWorked={"04+"}
         cvLink={"assets/pdf/ShaimaHamilaResume.pdf"}
       />
-      <MyServices />
+      <MyServices title='Services' subTitle='What I offer' services={services} />
       <MySkills />
       <MyQualification />
       <MyProjects />
@@ -69,4 +69,27 @@ const socialLinks = [
   { href: "https://dribbble.com/shaimahamila", iconClass: "uil uil-dribbble" },
   { href: "https://www.facebook.com/shaimahamila", iconClass: "uil uil-facebook-f" },
   { href: "https://www.instagram.com/shaimahamila/", iconClass: "uil uil-instagram" },
+];
+const services = [
+  {
+    iconClass: "uil uil-brackets-curly",
+    title: "Web Developer",
+    description: "I build responsive and dynamic web applications, providing seamless user experiences.",
+    buttonText: "View My Github",
+    buttonLink: "https://github.com/shaimaHamila",
+  },
+  {
+    iconClass: "uil uil-wordpress-simple",
+    title: "WordPress Developer",
+    description: "I develop custom WordPress sites tailored to your needs, ensuring functionality and aesthetics.",
+    buttonText: "View More",
+    buttonLink: "#projects",
+  },
+  {
+    iconClass: "uil uil-brush-alt",
+    title: "UX/UI Designer",
+    description: "I build responsive and dynamic web applications, providing seamless user experiences.",
+    buttonText: "View My Dribbble",
+    buttonLink: "https://dribbble.com/shaimaHamila",
+  },
 ];
