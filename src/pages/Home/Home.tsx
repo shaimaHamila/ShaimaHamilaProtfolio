@@ -45,7 +45,7 @@ const Home: React.FC = () => {
         cvLink={"assets/pdf/ShaimaHamilaResume.pdf"}
       />
       <MyServices title='Services' subTitle='What I offer' services={services} />
-      <MySkills />
+      <MySkills title={"My Skills"} subTitle={"My technical skills"} skills={skillsData} />
       <MyQualification />
       <MyProjects />
       <ContactMe />
@@ -92,4 +92,22 @@ const services = [
     buttonText: "View My Dribbble",
     buttonLink: "https://dribbble.com/shaimaHamila",
   },
+];
+const skillsData = [
+  { iconClass: "devicon-react-original colored", name: "React Ts", category: "Frontend" },
+  { iconClass: "devicon-angularjs-plain colored", name: "Angular", category: "Frontend" },
+  { iconClass: "devicon-redux-original colored", name: "Redux Toolkit", category: "Frontend" },
+  { iconClass: "devicon-tailwindcss-original colored", name: "Tailwind", category: "Frontend" },
+  { iconClass: "devicon-bootstrap-plain colored", name: "Bootstrap", category: "Frontend" },
+  { iconClass: "devicon-antdesign-plain colored", name: "Ant Design", category: "Frontend" },
+  { iconClass: "devicon-express-original colored", name: "Express Ts", category: "Frontend" },
+  { iconClass: "devicon-spring-original colored", name: "Spring Boot", category: "Frontend" },
+  { iconClass: "devicon-dot-net-plain colored", name: ".NET", category: "Frontend" },
+  { iconClass: "devicon-firebase-plain colored", name: "Firebase", category: "Frontend" },
+  { iconClass: "devicon-mongodb-plain colored", name: "MongoDB", category: "Frontend" },
+  { iconClass: "devicon-mysql-original colored", name: "SQL", category: "Frontend" },
+  { iconClass: "devicon-docker-plain colored", name: "Docker", category: "Frontend" },
+  { iconClass: "devicon-git-plain colored", name: "Git", category: "Frontend" },
+  { iconClass: "devicon-wordpress-plain colored", name: "WordPress", category: "Frontend" },
+  { iconClass: "devicon-figma-plain colored", name: "Figma", category: "Frontend" },
 ];
