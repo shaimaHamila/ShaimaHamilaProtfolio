@@ -1,172 +1,99 @@
+import { useState } from "react";
 import SectionTitle from "../../atoms/SectionTitle/SectionTitle";
 import "./MyQualification.scss";
-const MyQualification: React.FC = () => {
+
+type Qualification = {
+  title: string;
+  subtitle: string;
+  calendar: string;
+};
+
+type Section = {
+  title: string;
+  qualifications: Qualification[];
+};
+
+type MyQualificationProps = {
+  sections: {
+    education: Section;
+    work: Section;
+  };
+};
+
+const MyQualification: React.FC<MyQualificationProps> = ({ sections }) => {
+  const [activeSection, setActiveSection] = useState("education");
+  const [qualifications, setQualifications] = useState(sections.education.qualifications);
+
+  const handleTabClick = (section: "education" | "work") => {
+    setActiveSection(section);
+    setQualifications(sections[section].qualifications);
+  };
   return (
     <section className='qualification__section section' id='qualification'>
-      {/* <!--==================== QUALIFICATION ====================--> */}
-      <SectionTitle title={"Gualification"} subTitle={"My personal journy"} />
+      <SectionTitle title='Qualification' subTitle='My personal journey' />
 
       <div className='qualification__container container'>
         <div className='qualification__tabs'>
-          <div className='qualification__button button--flex qualification__active' data-target='#education'>
+          <div
+            className={`qualification__button button--flex ${activeSection === "education" ? "qualification__active" : ""}`}
+            onClick={() => handleTabClick("education")}
+          >
             <i className='uil uil-graduation-cap qualification__icon'></i>
             Education
           </div>
 
-          <div className='qualification__button button--flex' data-target='#work'>
+          <div
+            className={`qualification__button button--flex ${activeSection === "work" ? "qualification__active" : ""}`}
+            onClick={() => handleTabClick("work")}
+          >
             <i className='uil uil-bag qualification__icon'></i>
-            work
+            Work
           </div>
         </div>
 
         <div className='qualification__sections'>
-          {/* <!--==================== QUALIFICATION CONTENT 1 ====================--> */}
-          <div className='qualification__content qualification__active ' data-content id='education'>
-            {/* <!--==================== QUALIFICATION 1 ====================--> */}
-            <div className='qualification__data'>
-              <div>
-                <h3 className='qualification__title'>Computer Science and Mulimedia</h3>
-                <span className='qualification__subtitle'>ISIMS | Graduated - University</span>
-                <div className='qualification__calendar'>
-                  <i className='uil uil-calendar-alt'></i>
-                  2019 - 2022
-                </div>
+          <div className={`qualification__content qualification__active`} data-content>
+            {qualifications.map((qual, index) => (
+              <div className='qualification__data' key={index}>
+                {index % 2 === 0 ? (
+                  <>
+                    <div>
+                      <h3 className='qualification__title'>{qual.title}</h3>
+                      <span className='qualification__subtitle'>{qual.subtitle}</span>
+                      <div className='qualification__calendar'>
+                        <i className='uil uil-calendar-alt'></i>
+                        {qual.calendar}
+                      </div>
+                    </div>
+                    <div>
+                      <span className='qualification__rounder'></span>
+                      {index < qualifications.length - 1 && <span className='qualification__line'></span>}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div></div>
+                    <div>
+                      <span className='qualification__rounder'></span>
+                      {index < qualifications.length - 1 && <span className='qualification__line'></span>}
+                    </div>
+                    <div>
+                      <h3 className='qualification__title'>{qual.title}</h3>
+                      <span className='qualification__subtitle'>{qual.subtitle}</span>
+                      <div className='qualification__calendar'>
+                        <i className='uil uil-calendar-alt'></i>
+                        {qual.calendar}
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
-
-              <div>
-                <span className='qualification__rounder'></span>
-                <span className='qualification__line'></span>
-              </div>
-            </div>
-
-            {/* <!--==================== QUALIFICATION 2 ==================== */}
-            <div className='qualification__data'>
-              <div></div>
-
-              <div>
-                <span className='qualification__rounder'></span>
-                <span className='qualification__line'></span>
-              </div>
-
-              <div>
-                <h3 className='qualification__title'>Web Design</h3>
-                <span className='qualification__subtitle'>Tunisia - Institute</span>
-                <div className='qualification__calendar'>
-                  <i className='uil uil-calendar-alt'></i>
-                  2009 - 2014
-                </div>
-              </div>
-            </div>
-
-            {/* <!--==================== QUALIFICATION 4 ====================--> */}
-            <div className='qualification__data'>
-              <div></div>
-
-              <div>
-                <span className='qualification__rounder'></span>
-                <span className='qualification__line'></span>
-              </div>
-
-              <div>
-                <h3 className='qualification__title'>Farhat Hached High School</h3>
-                <span className='qualification__subtitle'>Bachelor of Mathematics</span>
-                <div className='qualification__calendar'>
-                  <i className='uil uil-calendar-alt'></i>
-                  2018 - 2019
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* <!--==================== QUALIFICATION CONTENT 2 ====================--> */}
-          <div className='qualification__content ' data-content id='work'>
-            {/* <!--==================== QUALIFICATION 1 ====================--> */}
-            <div className='qualification__data'>
-              <div>
-                <h3 className='qualification__title'>Freelancer</h3>
-                <span className='qualification__subtitle'>Freelancer.com</span>
-                <div className='qualification__calendar'>
-                  <i className='uil uil-calendar-alt'></i>
-                  2021 - Present
-                </div>
-              </div>
-              <div>
-                <span className='qualification__rounder'></span>
-                <span className='qualification__line'></span>
-              </div>
-            </div>
-
-            {/* <!--==================== QUALIFICATION 2 ====================--> */}
-            <div className='qualification__data'>
-              <div></div>
-
-              <div>
-                <span className='qualification__rounder'></span>
-                <span className='qualification__line'></span>
-              </div>
-
-              <div>
-                <h3 className='qualification__title'>CEO Co-Founder</h3>
-                <span className='qualification__subtitle'>Smart Move Solutions - Tunis</span>
-                <div className='qualification__calendar'>
-                  <i className='uil uil-calendar-alt'></i>
-                  2021 - Present
-                </div>
-              </div>
-            </div>
-
-            {/* <!--==================== QUALIFICATION 3 ====================--> */}
-            <div className='qualification__data'>
-              <div>
-                <h3 className='qualification__title'>UX Agile manager</h3>
-                <span className='qualification__subtitle'>UX Academy - Tunis</span>
-                <div className='qualification__calendar'>
-                  <i className='uil uil-calendar-alt'></i>3 months 2021
-                </div>
-              </div>
-              <div>
-                <span className='qualification__rounder'></span>
-                <span className='qualification__line'></span>
-              </div>
-            </div>
-
-            {/* <!--==================== QUALIFICATION 4 ====================--> */}
-            <div className='qualification__data'>
-              <div></div>
-
-              <div>
-                <span className='qualification__rounder'></span>
-                <span className='qualification__line'></span>
-              </div>
-
-              <div>
-                <h3 className='qualification__title'>Web Designer</h3>
-                <span className='qualification__subtitle'>Flush - US</span>
-                <div className='qualification__calendar'>
-                  <i className='uil uil-calendar-alt'></i>2 months 2021
-                </div>
-              </div>
-            </div>
-
-            {/* <!--==================== QUALIFICATION 5 ====================--> */}
-            <div className='qualification__data'>
-              <div>
-                <h3 className='qualification__title'>Web Developer</h3>
-                <span className='qualification__subtitle'>TeamDev Internship - Sousse</span>
-                <div className='qualification__calendar'>
-                  <i className='uil uil-calendar-alt'></i>2 months 2020
-                </div>
-              </div>
-
-              <div>
-                <span className='qualification__rounder'></span>
-                <span className='qualification__line'></span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
 };
+
 export default MyQualification;
