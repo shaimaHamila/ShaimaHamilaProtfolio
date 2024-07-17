@@ -16,7 +16,7 @@ import MyProjects from "../../components/templates/MyProjects/MyProjects";
 import MyQualification from "../../components/templates/MyQualification/MyQualification";
 import MyServices from "../../components/templates/MyServices/MyServices";
 import MySkills from "../../components/templates/MySkills/MySkills";
-import { Sections, Services, SkillsData, SocialLinks } from "../../MyData/MyData";
+import { Projects, Sections, Services, SkillsData, SocialLinks } from "../../MyData/MyData";
 
 const Home: React.FC = () => {
   return (
@@ -47,8 +47,8 @@ const Home: React.FC = () => {
       />
       <MyServices title='Services' subTitle='What I offer' services={Services} />
       <MySkills title={"My Skills"} subTitle={"My technical skills"} skills={SkillsData} />
-      <MyQualification sections={Sections} />
-      <MyProjects />
+      <MyQualification sections={Sections} title={"Qualification"} subTitle={"My personal journey"} />
+      <MyProjects projects={Projects} title={"My work "} subTitle={"Most recent work"} />
       <ContactMe />
       <Footer />
     </div>

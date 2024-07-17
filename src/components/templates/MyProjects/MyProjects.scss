@@ -1,0 +1,39 @@
+/*============ Work ==========*/
+.work__container {
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.work__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+.work__description {
+  font-size: 13px;
+  color: #a8a8a8;
+  flex-grow: 1;
+}
+
+.work__title {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.work__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.services__button {
+  align-self: flex-start;
+  margin-top: 1rem;
+}

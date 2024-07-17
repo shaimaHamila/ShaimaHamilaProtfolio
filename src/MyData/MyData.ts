@@ -109,3 +109,29 @@ export const Sections = {
     ],
   },
 };
+export const Projects = [
+  {
+    imgSrc: "src/assets/wordpressWebsite.png",
+    title: "Wordpress Website",
+    description: "I designed and developed this website using WordPress.",
+    projectLink: "https://dribbble.com/shots/16137127-Sign-in",
+  },
+  {
+    imgSrc: "/src/assets/fansbookAPP.png",
+    title: "Mobile App",
+    description: "Developed Fansbook, a mobile app using Ionic/Angular and Firebase.",
+    projectLink: "https://dribbble.com/shots/16662009-Asfar-El-Hamd-Logo-Travel-Agency-logo",
+  },
+  {
+    imgSrc: "/src/assets/UXUIDesign.png",
+    title: "UX/UI Design",
+    description: "I designed this Landing page.",
+    projectLink: "https://dribbble.com/shots/16662009-Asfar-El-Hamd-Logo-Travel-Agency-logo",
+  },
+  {
+    imgSrc: "/src/assets/OrdinaryPlatform.png",
+    title: "Dev",
+    description: "I developed this logo for a travel agency.",
+    projectLink: "https://dribbble.com/shots/16662009-Asfar-El-Hamd-Logo-Travel-Agency-logo",
+  },
+];

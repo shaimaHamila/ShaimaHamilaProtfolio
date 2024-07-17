@@ -18,9 +18,11 @@ type MyQualificationProps = {
     education: Section;
     work: Section;
   };
+  title: string;
+  subTitle: string;
 };
 
-const MyQualification: React.FC<MyQualificationProps> = ({ sections }) => {
+const MyQualification: React.FC<MyQualificationProps> = ({ sections, title, subTitle }) => {
   const [activeSection, setActiveSection] = useState("education");
   const [qualifications, setQualifications] = useState(sections.education.qualifications);
 
@@ -30,7 +32,7 @@ const MyQualification: React.FC<MyQualificationProps> = ({ sections }) => {
   };
   return (
     <section className='qualification__section section' id='qualification'>
-      <SectionTitle title='Qualification' subTitle='My personal journey' />
+      <SectionTitle title={title} subTitle={subTitle} />
 
       <div className='qualification__container container'>
         <div className='qualification__tabs'>
