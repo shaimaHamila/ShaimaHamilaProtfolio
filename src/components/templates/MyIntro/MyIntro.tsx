@@ -29,9 +29,9 @@ const MyIntro: React.FC<MyIntroProps> = ({ socialLinks, imageSrc, title, subtitl
               <h1 className='home__title'>{title}</h1>
               <h3 className='home__subtitle'>{subtitle}</h3>
               <div className='home__btn-scroll' style={{ display: "flex" }}>
-                <button className='button button--flex glow-on-hover'>
+                <a href='#contact' className='button button--flex glow-on-hover'>
                   Get in touch<i className='uil uil-message button__icon'></i>
-                </button>
+                </a>
                 <div className='home__scroll'>
                   <a href='#about' className='home__scroll-button button--flex'>
                     <i className='uil uil-mouse-alt home__scroll-mouse'></i>

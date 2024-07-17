@@ -7,6 +7,7 @@
 
   /* HSL color mode */
   --first-color: hsl(var(--hue-color), 98%, 50%);
+  --logo-color: hsl(var(--hue-color), 98%, 50%);
   --first-color-second: hsl(var(--hue-color), 69%, 61%);
   --first-color-alt: hsl(var(--hue-color), 98%, 42%);
   --first-color-lighter: hsl(var(--hue-color), 29%, 85%);
@@ -19,6 +20,7 @@
   --container-color: #fff;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  --footer-color: #0e0e0e;
 
   /*====== font and typography ========*/
   --body-font: "Poppins", sans-serif;
@@ -69,6 +71,8 @@
   /*========== Variables dark theme =======*/
   body.dark-theme {
     /* HSL color mode */
+
+    --logo-color: #242424;
     --first-color-second: hsl(var(--hue-color), 30%, 8%);
     --title-color: hsl(var(--hue-color), 8%, 95%);
     --text-color: hsl(var(--hue-color), 8%, 75%);
@@ -78,5 +82,6 @@
     --container-color: hsl(var(--hue-color), 29%, 16%);
     --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+    --footer-color: hsl(10deg 98% 50% / 69%);
   }
 }

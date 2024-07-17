@@ -135,3 +135,30 @@ export const Projects = [
     projectLink: "https://dribbble.com/shots/16662009-Asfar-El-Hamd-Logo-Travel-Agency-logo",
   },
 ];
+export const ContactInformation = [
+  {
+    icon: "uil uil-phone",
+    title: "Call Me",
+    subtitle: "+216 22 016 583",
+  },
+  {
+    icon: "uil uil-envelope",
+    title: "Email",
+    subtitle: "hamilachaima18@gmail.com",
+  },
+  {
+    icon: "uil uil-map-marker",
+    title: "Location",
+    subtitle: "Tunisia-Sousse",
+  },
+];
+
+export const NavLinks = [
+  { href: "#intro", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#services", label: "Services" },
+  { href: "#skills", label: "Skills" },
+  { href: "#qualification", label: "Qualification" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contactme" },
+];

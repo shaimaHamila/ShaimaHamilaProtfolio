@@ -23,7 +23,7 @@ const MyProjects: React.FC<MyProjectsProps> = ({ projects, title, subTitle }) =>
       <div className='services__container container grid'>
         {projects.map((project, index) => (
           <div className='work__content' key={index}>
-            <img src={project.imgSrc} alt={project.title} />
+            <img className='work__img' src={project.imgSrc} alt={project.title} />
             <div className='work__info'>
               <h3 className='work__title'>{project.title}</h3>
               <p className='work__description'>{project.description}</p>
