@@ -114,13 +114,7 @@ export const Projects = [
     imgSrc: "src/assets/wordpressWebsite.png",
     title: "Wordpress Website",
     description: "I designed and developed this website using WordPress.",
-    projectLink: "https://dribbble.com/shots/16137127-Sign-in",
-  },
-  {
-    imgSrc: "/src/assets/fansbookAPP.png",
-    title: "Mobile App",
-    description: "Developed Fansbook, a mobile app using Ionic/Angular and Firebase.",
-    projectLink: "https://dribbble.com/shots/16662009-Asfar-El-Hamd-Logo-Travel-Agency-logo",
+    projectLink: "#",
   },
   {
     imgSrc: "/src/assets/UXUIDesign.png",
@@ -129,10 +123,46 @@ export const Projects = [
     projectLink: "https://dribbble.com/shots/16662009-Asfar-El-Hamd-Logo-Travel-Agency-logo",
   },
   {
-    imgSrc: "/src/assets/OrdinaryPlatform.png",
-    title: "Dev",
-    description: "I developed this logo for a travel agency.",
-    projectLink: "https://dribbble.com/shots/16662009-Asfar-El-Hamd-Logo-Travel-Agency-logo",
+    imgSrc: "/src/assets/fansbookAPP.png",
+    title: "Mobile App",
+    description: "Developed Fansbook, a mobile app using Ionic/Angular and Firebase.",
+    projectLink: "https://github.com/shaimaHamila/fansbook",
+  },
+  {
+    imgSrc: "/src/assets/",
+    title: "React Boilerplate",
+    description: "React Boilerplate with TypeScript, Redux Toolkit, Axios, Routing, Docker, Prettier.",
+    projectLink: "https://github.com/shaimaHamila/React-Boilerplate",
+  },
+  {
+    imgSrc: "/src/assets/",
+    title: "ForeverInHeart",
+    description: "Is a memory-keeping application Under Development using MEARN.",
+    projectLink: "https://github.com/shaimaHamila/ForeverInHeart",
+  },
+  {
+    imgSrc: "/src/assets/",
+    title: "API-Quick-Test",
+    description: "Is a user-friendly tool for efficient API testing.",
+    projectLink: "https://github.com/shaimaHamila/API-Quick-Test",
+  },
+  {
+    imgSrc: "/src/assets/",
+    title: "Hospital Management",
+    description: "Hospital Management System developed with React and ASP.NET Core EF 8.",
+    projectLink: "https://github.com/shaimaHamila/HospitalManagement",
+  },
+  {
+    imgSrc: "/src/assets/",
+    title: "MyFinance",
+    description: "Web application developed with .NET Core 3.1 Entity Framework Core ASP.NET Core MVC HTML CSS.",
+    projectLink: "https://github.com/shaimaHamila/MyFinance",
+  },
+  {
+    imgSrc: "/src/assets/",
+    title: "Stack-Overflow-Clone",
+    description: "StackOverflow clone built with Angular and Spring Boot, utilizing JWT for security.",
+    projectLink: "https://github.com/shaimaHamila/Stack-Overflow-Clone",
   },
 ];
 export const ContactInformation = [
