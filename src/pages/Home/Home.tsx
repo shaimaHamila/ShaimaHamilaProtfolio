@@ -25,6 +25,9 @@ import {
   SkillsData,
   SocialLinks,
 } from "../../MyData/MyData";
+import { store } from "../../store/store";
+import { addMessage } from "../../features/message/messageSlice";
+import { ToastContainer } from "react-toastify";
 
 const Home: React.FC = () => {
   return (
@@ -60,7 +63,8 @@ const Home: React.FC = () => {
         <MyProjects projects={Projects} title={"My work "} subTitle={"Most recent work"} />
         <ContactMe
           contactInformation={ContactInformation}
-          submitForm={(data) => {
+          submitForm={async (data) => {
+            store.dispatch(addMessage(data));
             console.log("Form submitted : ", data);
           }}
           subTitle={"Get in touch"}
@@ -74,6 +78,7 @@ const Home: React.FC = () => {
         navLinks={NavLinks}
         copyText='Designed and Developed by Shaima Hamila'
       />
+      <ToastContainer />
     </>
   );
 };

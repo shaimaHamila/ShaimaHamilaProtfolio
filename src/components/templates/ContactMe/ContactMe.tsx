@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ContactMe.scss";
 import SectionTitle from "../../atoms/SectionTitle/SectionTitle";
+import { Message } from "../../../types/Message";
 
 type ContactInfo = {
   icon: string;
@@ -10,17 +11,18 @@ type ContactInfo = {
 
 type ContactMeProps = {
   contactInformation: ContactInfo[];
-  submitForm: (formData: { fullName: string; email: string; message: string }) => void;
+  submitForm: (formData: Message) => void;
   subTitle: string;
   title: string;
 };
 
 const ContactMe: React.FC<ContactMeProps> = ({ contactInformation, submitForm, subTitle, title }) => {
-  const [formData, setFormData] = useState({
+  const initialState = {
     fullName: "",
     email: "",
     message: "",
-  });
+  };
+  const [formData, setFormData] = useState<Message>(initialState);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -37,6 +39,7 @@ const ContactMe: React.FC<ContactMeProps> = ({ contactInformation, submitForm, s
       return;
     }
     submitForm(formData);
+    setFormData(initialState);
   };
   return (
     <section id='contact' className='contact section'>
