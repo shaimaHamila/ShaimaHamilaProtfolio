@@ -111,7 +111,7 @@ export const Sections = {
 };
 export const Projects = [
   {
-    imgSrc: "src/assets/projectsImg/wordpressWebsite.png",
+    imgSrc: "/src/assets/projectsImg/wordpressWebsite.png",
     title: "Wordpress Website",
     description: "I designed and developed this website using WordPress.",
     projectLink: "#",
