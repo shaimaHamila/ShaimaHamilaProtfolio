@@ -10,7 +10,7 @@ const createToken = (id: string) => {
   });
 };
 
-export const login = async (req: Request, res: Response) => {
+export const Login = async (req: Request, res: Response) => {
   const { userName, password } = req.body;
   try {
     if (!userName || !password) {

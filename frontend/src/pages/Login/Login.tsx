@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Login.scss";
-
-type LoginForm = {
-  username: string;
-  password: string;
-};
+import { store } from "../../store/store";
+import { login, selectUser } from "../../features/auth/authSlice";
+import { useAppSelector } from "../../store/hooks";
+import { useNavigate } from "react-router-dom";
+import { Admin } from "../../types/Admin";
 
 const Login: React.FC = () => {
   const spansArray = Array.from({ length: 200 }, (_, index) => <span className='signin__span' key={index}></span>);
 
-  const [loginForm, setLoginForm] = useState<LoginForm>({ username: "", password: "" });
+  const [loginForm, setLoginForm] = useState<Partial<Admin>>({ userName: "", password: "" });
+  const user = useAppSelector(selectUser);
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -22,8 +24,16 @@ const Login: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", loginForm);
-    setLoginForm({ username: "", password: "" });
+    store.dispatch(login(loginForm));
+
+    setLoginForm({ userName: "", password: "" });
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate("/admin/messages");
+    }
+  }, [user, navigate]);
 
   return (
     <section className='login__section'>
@@ -37,12 +47,12 @@ const Login: React.FC = () => {
               <input
                 className='signin__input'
                 type='text'
-                name='username'
-                value={loginForm.username}
+                name='userName'
+                value={loginForm.userName}
                 onChange={handleChange}
                 required
               />
-              <i>Username</i>
+              <i>userName</i>
             </div>
 
             <div className='inputBox'>

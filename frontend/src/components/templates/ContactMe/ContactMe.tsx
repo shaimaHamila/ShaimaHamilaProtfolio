@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ContactMe.scss";
 import SectionTitle from "../../atoms/SectionTitle/SectionTitle";
 import { Message } from "../../../types/Message";
+import { Link } from "react-router-dom";
 
 type ContactInfo = {
   icon: string;
@@ -96,11 +97,14 @@ const ContactMe: React.FC<ContactMeProps> = ({ contactInformation, submitForm, s
             ></textarea>
           </div>
 
-          <div>
+          <div style={{ display: "flex", gap: "1rem" }}>
             <a className='button button--flex' onClick={handleSubmit}>
               Send Message
               <i className='uil uil-message button__icon'></i>
             </a>
+            <Link to='/admin/messages' className='button button--flex'>
+              <a>See Messages</a>
+            </Link>
           </div>
         </form>
       </div>

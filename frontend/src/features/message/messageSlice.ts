@@ -19,8 +19,14 @@ export const fetchMessages = createAsyncThunk<Message[], void, { state: RootStat
   "message/fetchMessages",
   async () => {
     try {
-      const response = await api.get("/message");
-      return response.data;
+      const token = localStorage.getItem("accessToken");
+
+      const response = await api.get("/message", {
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      });
+      return response.data.data;
     } catch (error: any) {
       return error.response.data.message;
     }
@@ -40,7 +46,7 @@ export const addMessage = createAsyncThunk<Message, Partial<Message>, { state: R
 );
 
 const messageSlice = createSlice({
-  name: "messages",
+  name: "message",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -77,7 +83,7 @@ const messageSlice = createSlice({
   },
 });
 
-export const selectMessages = (state: RootState) => state.messages;
-export const selectStatus = (state: RootState) => state.messages;
+export const selectMessages = (state: RootState) => state.message.messages;
+export const selectStatus = (state: RootState) => state.message.status;
 
 export default messageSlice.reducer;
