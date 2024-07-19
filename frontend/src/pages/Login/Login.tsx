@@ -1,6 +1,30 @@
+import { useState } from "react";
 import "./Login.scss";
-const Login = () => {
+
+type LoginForm = {
+  username: string;
+  password: string;
+};
+
+const Login: React.FC = () => {
   const spansArray = Array.from({ length: 200 }, (_, index) => <span className='signin__span' key={index}></span>);
+
+  const [loginForm, setLoginForm] = useState<LoginForm>({ username: "", password: "" });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setLoginForm((prevForm) => ({
+      ...prevForm,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Form submitted:", loginForm);
+    setLoginForm({ username: "", password: "" });
+  };
+
   return (
     <section className='login__section'>
       {spansArray}
@@ -8,23 +32,35 @@ const Login = () => {
         <div className='signin__content'>
           <h2>Sign In</h2>
 
-          <div className='form'>
+          <form className='form' onSubmit={handleSubmit}>
             <div className='inputBox'>
-              <input className='signin__input' type='text' required /> <i>Username</i>
+              <input
+                className='signin__input'
+                type='text'
+                name='username'
+                value={loginForm.username}
+                onChange={handleChange}
+                required
+              />
+              <i>Username</i>
             </div>
 
             <div className='inputBox'>
-              <input className='signin__input' type='password' required /> <i>Password</i>
+              <input
+                className='signin__input'
+                type='password'
+                name='password'
+                value={loginForm.password}
+                onChange={handleChange}
+                required
+              />
+              <i>Password</i>
             </div>
-
-            {/* <div className='links'>
-              <a href='#'>Forgot Password</a> <a href='#'>Signup</a>
-            </div> */}
 
             <div className='inputBox'>
               <input className='signin__input' type='submit' value='Login' />
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>
