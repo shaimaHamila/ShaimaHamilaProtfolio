@@ -1,0 +1,10 @@
+dist/
+node_modules/
+logs/
+data/
+.vscode/
+.env
+package-lock.json
+
+# Package lock 
+pnpm-lock.yaml
