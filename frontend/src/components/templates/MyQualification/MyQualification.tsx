@@ -37,7 +37,9 @@ const MyQualification: React.FC<MyQualificationProps> = ({ sections, title, subT
       <div className='qualification__container container'>
         <div className='qualification__tabs'>
           <div
-            className={`qualification__button button--flex ${activeSection === "education" ? "qualification__active" : ""}`}
+            className={`qualification__button button--flex ${
+              activeSection === "education" ? "qualification__active" : ""
+            }`}
             onClick={() => handleTabClick("education")}
           >
             <i className='uil uil-graduation-cap qualification__icon'></i>

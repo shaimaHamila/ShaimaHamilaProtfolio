@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: vanlog-frontend
+    container_name: frontend
     ports:
       - "3000:3000"
     volumes:

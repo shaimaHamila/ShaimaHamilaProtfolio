@@ -30,7 +30,7 @@ const MyProjects: React.FC<MyProjectsProps> = ({ projects, title, subTitle }) =>
     <section className='portfolio work__section section' id='projects'>
       <SectionTitle title={title} subTitle={subTitle} />
       <div className='services__container container grid'>
-        {projects.map((project, index) => (
+        {projects.map((project, index: any) => (
           <div className='work__content' key={index}>
             <img
               className='work__img'
