@@ -32,10 +32,7 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend/src:/app/src
-    environment:
-      CHOKIDAR_USEPOLLING: "true"
     stdin_open: true
-    tty: true
     depends_on:
       - backend
     networks:

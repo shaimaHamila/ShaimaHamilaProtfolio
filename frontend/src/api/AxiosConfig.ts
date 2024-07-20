@@ -11,14 +11,15 @@ api.interceptors.response.use(
   },
   async (error) => {
     if (error.response.status === 401) {
-      localStorage.removeItem("user");
-      window.location.href = "/login";
-      await api.post("/auth/logout");
+      localStorage.removeItem("Admin");
+      localStorage.removeItem("accessToken");
+
+      window.location.href = "/";
     }
     if (error.response.status === 500) {
-      localStorage.removeItem("user");
-      window.location.href = "/login";
-      await api.post("/auth/logout");
+      localStorage.removeItem("Admin");
+      localStorage.removeItem("accessToken");
+      window.location.href = "/";
     }
     return Promise.reject(error);
   },

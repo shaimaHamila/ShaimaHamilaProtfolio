@@ -11,7 +11,7 @@ const Messages: React.FC = () => {
     store.dispatch(fetchMessages());
   }, []);
   return (
-    <section className='messages section'>
+    <div className='messages section'>
       <div className='messages__container container grid'>
         <h2 className='section__title'>Messages</h2>
         <Link to='/' className='button button--flex'>
@@ -39,7 +39,7 @@ const Messages: React.FC = () => {
           <p>No messages found</p>
         )}
       </div>
-    </section>
+    </div>
   );
 };
 

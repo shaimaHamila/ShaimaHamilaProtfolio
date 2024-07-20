@@ -5,7 +5,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: process.env.NODE_ENV === "development" ? "http://localhost:5000" : "https://shaimaHamila.io",
+        target: process.env.NODE_ENV === "development" ? "http://localhost:5000" : "https://shaimahmila.pages.dev",
       },
     },
   },

@@ -9,3 +9,17 @@ services:
       - ./data:/data/db
     networks:
       - default
+
+  backend:
+    build: .
+    container_name: Backend
+    ports:
+      - 6000:6000
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/your_database_name
+    depends_on:
+      - mongo
+    volumes:
+      - .:/app
+    networks:
+      - default
