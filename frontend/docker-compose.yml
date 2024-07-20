@@ -2,15 +2,10 @@ version: "3.8"
 
 services:
   frontend:
+    container_name: frontend-test
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: frontend
     ports:
       - "3000:3000"
-    volumes:
-      - ./src:/app/src
-    environment:
-      CHOKIDAR_USEPOLLING: "true"
     stdin_open: true
-    tty: true

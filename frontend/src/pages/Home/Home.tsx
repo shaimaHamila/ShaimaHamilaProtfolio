@@ -28,8 +28,16 @@ import {
 import { store } from "../../store/store";
 import { addMessage } from "../../features/message/messageSlice";
 import { ToastContainer } from "react-toastify";
+import { useEffect, useState } from "react";
 
 const Home: React.FC = () => {
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("Admin") ? true : false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("Admin");
+
+    setLoggedIn(token ? true : false);
+  }, [loggedIn]);
   return (
     <>
       <Menu logo={"Shaima Hamila"} menuItems={menuItems} />
@@ -65,10 +73,10 @@ const Home: React.FC = () => {
           contactInformation={ContactInformation}
           submitForm={async (data) => {
             store.dispatch(addMessage(data));
-            console.log("Form submitted : ", data);
           }}
           subTitle={"Get in touch"}
           title={" Contact Me"}
+          loggedIn={loggedIn}
         />
       </div>
       <Footer

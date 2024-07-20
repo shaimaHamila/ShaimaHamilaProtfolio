@@ -15,9 +15,10 @@ type ContactMeProps = {
   submitForm: (formData: Message) => void;
   subTitle: string;
   title: string;
+  loggedIn: boolean;
 };
 
-const ContactMe: React.FC<ContactMeProps> = ({ contactInformation, submitForm, subTitle, title }) => {
+const ContactMe: React.FC<ContactMeProps> = ({ contactInformation, submitForm, subTitle, title, loggedIn }) => {
   const initialState = {
     fullName: "",
     email: "",
@@ -102,9 +103,11 @@ const ContactMe: React.FC<ContactMeProps> = ({ contactInformation, submitForm, s
               Send Message
               <i className='uil uil-message button__icon'></i>
             </a>
-            <Link to='/admin/messages' className='button button--flex'>
-              <a>See Messages</a>
-            </Link>
+            {loggedIn && (
+              <Link to='/admin/messages' className='button button--flex'>
+                <a>See Messages</a>
+              </Link>
+            )}
           </div>
         </form>
       </div>

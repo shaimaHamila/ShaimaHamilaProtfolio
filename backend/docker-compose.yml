@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  backend:
+    container_name: backend-test
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    networks:
+      - mern-network
+
+  mongo:
+    container_name: mongo-test
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - mern-network
+    volumes:
+      - ./mongo-data:/data/db
+
+networks:
+  mern-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local

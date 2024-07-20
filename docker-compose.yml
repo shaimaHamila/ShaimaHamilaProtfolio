@@ -11,8 +11,8 @@ services:
     stdin_open: true
     depends_on:
       - backend
-    networks:
-      - mern-network
+    volumes:
+      - frontend-data:/app
 
   backend:
     container_name: backend
@@ -23,23 +23,21 @@ services:
       - "5000:5000"
     depends_on:
       - mongo
-    networks:
-      - mern-network
+    volumes:
+      - backend-data:/app
 
   mongo:
     container_name: mongo
     image: mongo:latest
     ports:
       - "27017:27017"
-    networks:
-      - mern-network
     volumes:
-      - ./mongo-data:/data/db
-
-networks:
-  mern-network:
-    driver: bridge
+      - mongo-data:/data/db
 
 volumes:
+  backend-data:
+    driver: local
+  frontend-data:
+    driver: local
   mongo-data:
     driver: local

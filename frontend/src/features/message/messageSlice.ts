@@ -28,7 +28,8 @@ export const fetchMessages = createAsyncThunk<Message[], void, { state: RootStat
       });
       return response.data.data;
     } catch (error: any) {
-      return error.response.data.message;
+      toast.error("Failed to feach message. Please try again.");
+      throw new Error(error.response.data.message);
     }
   },
 );
@@ -40,7 +41,8 @@ export const addMessage = createAsyncThunk<Message, Partial<Message>, { state: R
       const response = await api.post("/message", newMessage).then((res) => res.data);
       return response.data;
     } catch (error: any) {
-      return error.response.data.message;
+      toast.error("Failed to submit message. Please try again.");
+      throw new Error(error.response.data.message);
     }
   },
 );
@@ -75,10 +77,9 @@ const messageSlice = createSlice({
           toast.success("Message submitted successfully!");
         }
       })
-      .addCase(addMessage.rejected, (state, action) => {
+      .addCase(addMessage.rejected, (state) => {
         state.status = "failed";
-        state.error = action.error.message ?? "Somethin went wrong";
-        toast.error("Failed to submit message. Please try again.");
+        state.error = "Somethin went wrong";
       });
   },
 });
