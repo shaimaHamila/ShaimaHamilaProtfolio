@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3000, // Change the default port to 3000
     proxy: {
       "/api/v1": {
-        target: "http://127.0.0.1:5000", // Use the Docker service name
+        target: process.env.NODE_ENV === "development" ? "http://localhost:5000" : "https://shaimahmila.pages.dev",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/v1/, ""), // Optional: adjust path if needed
         secure: false,
