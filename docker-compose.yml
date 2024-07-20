@@ -1,43 +1,45 @@
 version: "3.9"
 
 services:
-  mongo:
-    container_name: mongo
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-    volumes:
-      - ./data:/data/db
-    networks:
-      - mern-network
-
-  backend:
-    build:
-      context: ./backend
-    container_name: backend
-    ports:
-      - "5000:5000"
-    environment:
-      MONGO_URI: mongodb://mongo:27017/your-database-name
-    depends_on:
-      - mongo
-    networks:
-      - mern-network
-
   frontend:
+    container_name: frontend
     build:
       context: ./frontend
-    container_name: frontend
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    volumes:
-      - ./frontend/src:/app/src
     stdin_open: true
     depends_on:
       - backend
     networks:
       - mern-network
 
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    networks:
+      - mern-network
+
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - mern-network
+    volumes:
+      - ./mongo-data:/data/db
+
 networks:
   mern-network:
     driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local

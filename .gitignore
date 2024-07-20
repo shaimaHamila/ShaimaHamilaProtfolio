@@ -1,0 +1,11 @@
+dist/
+node_modules/
+logs/
+data/
+.vscode/
+.env
+package-lock.json
+mongo-data/
+
+# Package lock 
+pnpm-lock.yaml
