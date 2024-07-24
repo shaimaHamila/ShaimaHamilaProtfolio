@@ -21,5 +21,5 @@ app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/auth", AuthRouter);
 
 app.listen(PORT, () => {
-  console.log("Express is running at 5000!");
+  console.log(`Express is running at 5000! ${PORT}`);
 });

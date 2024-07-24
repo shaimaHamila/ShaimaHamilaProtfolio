@@ -1,0 +1,16 @@
+{
+  "name": "shaimahamilaportfolio",
+  "version": "1.0.0",
+  "description": "Welcome to my portfolio project! This project showcases my skills and projects as a software engineer and web developer. It includes various sections like about me, my skills, projects, and contact information.",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "cd backend && npm install",
+    "start-server": "cd backend && npm start",
+    "install-client": "cd frontend && npm install",
+    "build-client": "cd frontend && npm run build",
+    "start-client": "cd frontend && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

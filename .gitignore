@@ -3,9 +3,15 @@ node_modules/
 logs/
 data/
 .vscode/
-.env
 package-lock.json
 mongo-data/
-
+build
 # Package lock 
 pnpm-lock.yaml
+
+.env.local
+
+/.pnpm.pnp.json
+/coverage
+
+npm-debug.log*
